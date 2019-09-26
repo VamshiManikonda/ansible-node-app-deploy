@@ -1,0 +1,27 @@
+---
+#done
+  - name: ensure file is absent which is causing trouble
+    sudo: yes
+    file: dest=/etc/apt/sources.list.d/{{ item }} state=absent
+    with_items:
+      - chris-lea-ubuntu-node_js-bionic.list
+      - chris-lea-ubuntu-node_js-bionic.list.save
+      - ppa_chris_lea_node_js_bionic.list
+      - ppa_chris_lea_node_js_bionic.list.save
+
+  - name: Update all packages to the latest version
+    sudo: yes
+    apt:
+      upgrade: dist
+
+  - name: Install the package "foo"
+    sudo: yes
+    apt:
+      name: curl
+      state: present
+
+  - name: Install the package "foo"
+    sudo: yes
+    apt:
+      name: git
+      state: present

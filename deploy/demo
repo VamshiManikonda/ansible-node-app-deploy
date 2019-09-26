@@ -1,0 +1,11 @@
+node01 ansible_ssh_host=172.24.34.17
+node02 ansible_ssh_host=172.24.34.170
+
+loadbaancer ansible_ssh_host=172.24.34.162
+
+[app-servers]
+node01
+node02
+
+[nginx-proxy-server]
+loadbaancer

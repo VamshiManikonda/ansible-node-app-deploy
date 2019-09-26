@@ -1,0 +1,11 @@
+---
+#Configuration for scheduler
+#########################################################
+
+repo_url: https://github.com/VamshiManikonda/ansible-node-app-deploy.git
+repo_version: master
+app_name: demo
+server_name: jokes.paralect.com
+nginx_servers: ["172.24.34.17:9000","172.24.34.170:9000"] #enter ip address of web server here...
+deploy_dir: "~/{{ app_name }}"
+deploy_app_dir: "~/{{ app_name }}/{{ app_name }}-app"
